@@ -1,26 +1,22 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
-import { Box, Paper, TextField, Typography } from '@mui/material';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { Box, Paper, Typography } from '@mui/material';
 
 import { SubmitFormButton } from 'shared/ui/buttons/SubmitFormButton';
 import { LoadingModal } from 'shared/ui/modals/LoadingModal';
 import { NotifyModal } from 'shared/ui/modals/NotifyModal';
-import { InputeTableDatePicker } from './ui/InputeTableDatePicker';
+import { BodyFormToTable } from 'shared/ui/forms/BodyFormToTable';
 
 import { useAppDispatch } from 'app/store/hooks';
 import { addDataToTable } from 'app/store/slices/tableDataSlice';
 import { addDataTableApi } from 'shared/api/requests/table/addDataTableApi';
 import { useModalState } from 'shared/hooks/useModalState';
 import { convertDataToIso } from './utils/convertDataToIso';
-import {
-  TKeyTableData,
-  TTableDataWithoutId,
-} from 'shared/lib/types/TTableData';
+import { TTableDataWithoutId } from 'shared/lib/types/TTableData';
 import { ADD_RECORD } from 'modules/BasicTable/utils/constans';
-import { boxForm, boxWrapper } from './styles';
 import { TITLE_TABLE } from 'shared/lib/constans/table';
-import { BodyFormToTable } from 'shared/ui/forms/BodyFormToTable';
+import { boxForm, boxWrapper } from './styles';
 
 export const FormAddRecordToTable = () => {
   const dispatch = useAppDispatch();

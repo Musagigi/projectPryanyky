@@ -7,7 +7,6 @@ import { FormAddRecordToTable } from 'modules/FormAddRecordToTable';
 
 import { useTableData } from './hooks/useTableData';
 import { boxWrapper } from './styles';
-import { useEffect } from 'react';
 
 const Table = () => {
   const { tableData, isOpen, isLoading, modalError, handleModalClose } =
